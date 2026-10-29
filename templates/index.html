@@ -1,0 +1,14 @@
+{% extends "base.html" %}{% block title %}Home | Health360{% endblock %}{% block content %}
+<section class="hero"><div class="copy"><label>● &nbsp;SMART HEALTHCARE ANALYTICS</label>
+<h1>Discover insights.<br><em>Improve health.</em></h1><div class="squiggle"></div>
+<p>Explore patient health patterns, lifestyle factors and disease risks through interactive data visualizations.</p>
+<div class="actions"><a class="primary" href="{{ url_for('dashboard') }}">Explore Dashboard ↗</a><a class="outline" href="{{ url_for('story') }}">View Story</a></div>
+<small class="caption">● &nbsp;Data-driven healthcare insights</small></div>
+<div class="art"><div class="orbit one"></div><div class="orbit two"></div>
+<div class="mock"><small>HEALTH OVERVIEW <span>● LIVE VIEW</span></small><div class="plus">✚</div><h3>Patient insights</h3><p>Lifestyle & risk indicators</p><div class="bars">{% for n in range(12) %}<i></i>{% endfor %}</div><small>Health metrics <b>Explore data ↗</b></small></div>
+<div class="float top">♡ <span><b>Patient-first</b><small>Healthcare insights</small></span></div>
+<div class="float bottom">⌁ <span><b>Data visualization</b><small>Clear & interactive</small></span></div></div></section>
+<section class="features"><div class="section-title"><label>EXPLORE HEALTH360</label><h2>Insights at a glance</h2><p>Navigate through the key parts of the healthcare analytics project.</p></div>
+<div class="cards"><a href="{{ url_for('dashboard') }}"><small>01 / DASHBOARD</small><b>▦</b><h3>Patient Dashboard</h3><p>Explore metrics, charts and comparisons across patient health indicators.</p><strong>Explore dashboard ↗</strong></a>
+<a href="{{ url_for('story') }}"><small>02 / STORY</small><b>◉</b><h3>Healthcare Story</h3><p>Follow a visual journey through patient risk and lifestyle insights.</p><strong>Explore story ↗</strong></a>
+<a href="{{ url_for('about') }}"><small>03 / PROJECT</small><b>✳</b><h3>About the Project</h3><p>Learn about the purpose, focus areas and objectives of Health360.</p><strong>Learn more ↗</strong></a></div></section>{% endblock %}

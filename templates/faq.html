@@ -1,0 +1,8 @@
+{% extends "base.html" %}{% block title %}FAQ | Health360{% endblock %}{% block content %}
+<section class="page-title"><label>HELP & INFORMATION</label><h1>Frequently asked questions</h1><div class="squiggle"></div><p>Quick answers about the Health360 analytics website.</p></section>
+<section class="faq"><div><label>NEED TO KNOW</label><h2>Everything you need to get started.</h2><p>Find out how to explore the dashboard and story.</p></div><div class="questions">
+<details open><summary>What is Health360?<span>＋</span></summary><p>Health360 is a healthcare analytics project that presents patient and lifestyle insights through interactive Tableau visualizations.</p></details>
+<details><summary>How do I use the dashboard?<span>＋</span></summary><p>Open the Dashboard page and use the charts, filters and interactive controls inside the Tableau view.</p></details>
+<details><summary>What is the Story page?<span>＋</span></summary><p>The Story page presents a sequence of visualizations that guides you through selected insights from the healthcare dataset.</p></details>
+<details><summary>Why is Tableau not loading?<span>＋</span></summary><p>Check your internet connection and confirm that the Tableau Public workbook is published and publicly accessible.</p></details>
+<details><summary>Does this website store patient information?<span>＋</span></summary><p>No. This Flask website embeds the published Tableau views and does not collect or store patient data.</p></details></div></section>{% endblock %}
