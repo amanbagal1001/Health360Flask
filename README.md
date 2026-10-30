@@ -7,6 +7,11 @@
 **Repository:** [https://github.com/amanbagal1001/Health360Flask](https://github.com/amanbagal1001/Health360Flask)
 
 ---
+📊 Interactive Dashboard
+
+Explore our interactive Tableau dashboard:
+
+"View Health_360 – Healthcare Analytics Dashboard" (https://public.tableau.com/views/Health360_ComprehensiveHealthcareRiskDiseaseAnalytics1/SmartHealthcareAnalyticsPatientRiskLifestyleInsights?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 ## 🌟 Overview
 
