@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="author" content="Aman Bagal">
+  <meta name="description" content="Health360 — Smart healthcare analytics, patient risk and lifestyle insights. Developed by Aman Bagal.">
+  <title>Health360 | Smart Healthcare Analytics by Aman Bagal</title>
+  <link rel="preconnect" href="https://public.tableau.com">
+  <!-- External stylesheet links (Flask & direct file access) -->
+  <link rel="stylesheet" href="../static/css/style.css">
+  <link rel="stylesheet" href="static/css/style.css">
+  <style>
+/* Embedded stylesheet ensures full styling regardless of how index.html is opened */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+:root{--ink:#302b29;--muted:#77706b;--brown:#805744;--brown-dark:#654533;--sand:#dfc9aa;--sand-light:#f8f3ed;--peach:#e8a17c;--line:#eee6de;--white:#fff;--shadow:0 12px 38px rgba(70,49,35,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:95px}body{margin:0;font-family:'DM Sans',sans-serif;color:var(--ink);background:#fff;line-height:1.6}a{color:inherit;text-decoration:none}.site-header{position:sticky;top:14px;z-index:20;width:min(1120px,calc(100% - 40px));margin:14px auto 0;padding:12px 18px 12px 20px;border:1px solid rgba(231,222,212,.65);border-radius:999px;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);box-shadow:0 4px 18px rgba(52,38,28,.08);display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:9px;flex-shrink:0}.brand-mark{width:33px;height:33px;border-radius:11px;display:grid;place-items:center;background:var(--brown);color:#fff;font-weight:800;font-size:17px;letter-spacing:-1px}.brand-mark span{color:#f3c39e}.brand-name{font-family:Manrope,sans-serif;font-size:18px;font-weight:800;letter-spacing:-.8px}.brand-name span{color:var(--brown)}.nav{display:flex;align-items:center;gap:7px}.nav-link{padding:9px 14px;border-radius:999px;font-size:13px;color:#5f5751;transition:.2s}.nav-link:hover,.nav-link.active{color:#bd704b;background:#fbf3ed}.menu-toggle{display:none;border:0;background:transparent;font-size:24px;color:var(--brown);cursor:pointer}.section{width:min(1120px,calc(100% - 40px));margin:0 auto}.hero{min-height:565px;display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:45px;padding-top:62px;padding-bottom:72px}.eyebrow{display:inline-flex;align-items:center;gap:9px;color:#a36d50;font-size:10px;letter-spacing:2px;font-weight:700}.eyebrow-dot{width:7px;height:7px;border-radius:50%;background:var(--peach);box-shadow:0 0 0 4px #f9e9df}.hero h1,.section-heading h2{font-family:Manrope,sans-serif;letter-spacing:-2.4px;line-height:1.12;font-size:clamp(36px,4.5vw,57px);margin:20px 0 18px;font-weight:800}.hero h1 span,.section-heading h2 span{color:var(--brown)}.hero-copy>p,.section-heading>p{font-size:15px;line-height:1.9;color:var(--muted);max-width:510px;margin:0}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:29px}.button{display:inline-flex;align-items:center;gap:14px;justify-content:center;border-radius:999px;padding:13px 20px;font-size:12px;font-weight:700;transition:transform .2s,box-shadow .2s}.button:hover{transform:translateY(-2px)}.button-primary{background:var(--brown);color:#fff;box-shadow:0 8px 18px #8057442b}.button-primary:hover{background:var(--brown-dark)}.button-secondary{border:1px solid #e8ddd2;color:var(--brown);background:white}.hero-note{margin-top:29px;color:#81776f;font-size:11px;display:flex;align-items:center;gap:8px}.note-icon{color:#d68e67;font-size:18px}.hero-art{height:385px;position:relative;display:grid;place-items:center}.art-glow{position:absolute;width:330px;height:330px;border-radius:50%;background:#f8eee3;right:7%;top:7%;filter:blur(1px)}.art-orbit{position:absolute;width:365px;height:365px;border:1px solid #e9d9c7;border-radius:50%;transform:rotate(-23deg);right:3%;top:1%}.art-orbit:after{content:"";position:absolute;width:13px;height:13px;background:#e7a17b;border-radius:50%;top:43px;right:43px;box-shadow:0 0 0 7px #e7a17b2b}.art-card{position:relative;z-index:2;background:rgba(255,255,255,.94);border:1px solid #eee3d8;border-radius:19px;box-shadow:0 18px 50px #6e4d3520}.card-main{width:min(355px,82%);padding:23px 23px 20px;transform:rotate(-2deg)}.art-card-top{display:flex;align-items:center;justify-content:space-between;font-size:11px;color:#81776e}.live-dot{font-size:9px;color:#729276}.art-number{font-family:Manrope,sans-serif;font-size:43px;font-weight:800;letter-spacing:-2px;margin:22px 0 10px;color:var(--brown)}.art-number small{font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:0;color:#95877b;font-weight:500}.mini-bars{height:105px;display:flex;align-items:end;gap:10px;border-bottom:1px solid #e9ded3;padding:0 5px}.mini-bars i{display:block;flex:1;background:linear-gradient(180deg,#d8b798,#a87d61);border-radius:5px 5px 0 0;opacity:.92}.mini-bars i:nth-child(2n){background:linear-gradient(180deg,#f2c3a4,#e49b74)}.art-legend{display:flex;gap:17px;margin-top:15px;font-size:9px;color:#847970}.art-legend span{display:flex;align-items:center;gap:6px}.art-legend b{width:7px;height:7px;border-radius:2px}.legend-brown{background:#a87d61}.legend-peach{background:#e49b74}.floating-stat{position:absolute;z-index:3;display:flex;align-items:center;gap:10px;padding:12px 15px;background:white;border:1px solid #f0e6dc;border-radius:13px;box-shadow:var(--shadow)}.floating-stat strong,.floating-stat small{display:block}.floating-stat strong{font-size:10px}.floating-stat small{font-size:9px;color:#9a8e83;margin-top:2px}.stat-symbol{display:grid;place-items:center;width:32px;height:32px;background:#f5e9dc;border-radius:10px;color:var(--brown);font-size:18px}.stat-symbol-peach{background:#fbe9de;color:#ce805a}.stat-one{left:0;top:74px}.stat-two{right:-3px;bottom:49px}.intro-strip{display:flex;justify-content:center;gap:clamp(20px,7vw,100px);padding:25px 24px;background:#faf7f4;border-top:1px solid #f3ede7;border-bottom:1px solid #f3ede7}.intro-strip>div{display:flex;align-items:center;gap:12px}.strip-icon{width:40px;height:40px;border-radius:13px;display:grid;place-items:center;background:white;border:1px solid #efe3d8;color:var(--brown);font-size:22px}.intro-strip p{margin:0}.intro-strip strong,.intro-strip small{display:block}.intro-strip strong{font-size:11px}.intro-strip small{font-size:10px;color:#8f847a;margin-top:3px}.about-section{padding-top:100px;padding-bottom:92px}.section-heading{text-align:center;margin:0 auto 38px;max-width:700px}.section-heading h2{font-size:clamp(30px,3.5vw,42px);letter-spacing:-1.6px;margin:13px 0 13px}.section-heading>p{max-width:650px;margin:0 auto;font-size:13px}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-top:40px}.feature-card{padding:25px 25px 27px;border:1px solid var(--line);border-radius:17px;background:white;transition:.2s}.feature-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:#e3cbb6}.feature-icon{display:grid;place-items:center;width:43px;height:43px;border-radius:13px;background:#f8eee5;color:var(--brown);font-size:23px}.feature-card h3{font-family:Manrope,sans-serif;font-size:15px;margin:18px 0 8px}.feature-card p{font-size:12px;line-height:1.8;color:var(--muted);margin:0}.disclaimer{max-width:850px;margin:24px auto 0;text-align:center;color:#9a8d82;font-size:10px}.visual-section{padding:78px max(20px,calc((100% - 1120px)/2)) 88px;background:#faf8f5}.story-section{background:#fff;padding-top:80px}.viz-shell{width:100%;max-width:1120px;margin:0 auto;background:#fff;border:1px solid #e9dfd5;border-radius:17px;overflow:hidden;box-shadow:0 15px 45px rgba(74,52,35,.08)}.viz-toolbar{height:45px;padding:0 17px;display:flex;align-items:center;gap:13px;border-bottom:1px solid #f0e8e0;font-size:10px;color:#85776c}.viz-toolbar>div{display:flex;gap:4px}.toolbar-dot{width:7px;height:7px;background:#d8c4af;border-radius:50%}.toolbar-dot:nth-child(2){background:#e9b18d}.toolbar-dot:nth-child(3){background:#b38c74}.viz-toolbar>a{margin-left:auto;color:var(--brown);font-weight:700}.viz-frame{width:100%;position:relative;background:#dfc9aa}.viz-frame iframe{display:block;width:100%;height:100%;border:0}.dashboard-frame{height:760px}.story-frame{height:720px}.faq-section{padding-top:93px;padding-bottom:100px}.faq-list{max-width:800px;margin:0 auto;border-top:1px solid var(--line)}.faq-list details{border-bottom:1px solid var(--line);padding:0 5px}.faq-list summary{list-style:none;cursor:pointer;padding:20px 34px 20px 4px;font-size:13px;font-weight:700;position:relative}.faq-list summary::-webkit-details-marker{display:none}.faq-list summary:after{content:"+";position:absolute;right:5px;top:16px;font-size:22px;color:var(--brown);font-weight:400}.faq-list details[open] summary:after{content:"−"}.faq-list details p{font-size:12px;color:var(--muted);line-height:1.8;margin:0;padding:0 30px 20px 4px}.footer{padding:28px max(20px,calc((100% - 1120px)/2)) 22px;background:#faf7f3;border-top:1px solid #f0e7df;display:flex;align-items:center;gap:20px;flex-wrap:wrap}.footer-brand .brand-mark{width:29px;height:29px;font-size:15px}.footer-brand .brand-name{font-size:16px}.footer p{font-size:10px;color:#85786d;margin:0}.back-top{margin-left:auto;font-size:11px;color:var(--brown);font-weight:700}.footer>small{width:100%;text-align:center;padding-top:14px;border-top:1px solid #eee4db;color:#a09286;font-size:9px}
+@media(max-width:760px){.site-header{width:calc(100% - 24px);top:8px;margin-top:8px;padding:10px 14px;border-radius:18px;flex-wrap:wrap}.menu-toggle{display:block}.nav{display:none;flex-basis:100%;flex-direction:column;align-items:stretch;gap:2px;padding:5px 0 3px}.nav.open{display:flex}.nav-link{padding:10px 13px}.hero{grid-template-columns:1fr;gap:18px;padding-top:72px;padding-bottom:48px}.hero-copy{text-align:center}.hero-copy>p{margin:0 auto}.hero-actions{justify-content:center}.hero-note{justify-content:center}.hero-art{height:330px}.art-glow{width:260px;height:260px;right:calc(50% - 130px)}.art-orbit{width:300px;height:300px;right:calc(50% - 150px);top:12px}.card-main{width:min(330px,82%)}.stat-one{left:0;top:38px}.stat-two{right:0;bottom:26px}.intro-strip{display:grid;grid-template-columns:1fr;gap:15px;padding:22px 30px}.about-section{padding-top:68px;padding-bottom:65px}.feature-grid{grid-template-columns:1fr;gap:12px}.feature-card{padding:21px}.visual-section{padding:60px 12px}.story-section{padding-top:60px}.dashboard-frame{height:650px}.story-frame{height:620px}.viz-toolbar{padding:0 10px}.viz-toolbar>a{font-size:9px}.section-heading{padding:0 7px;margin-bottom:28px}.faq-section{padding-top:68px;padding-bottom:70px}.footer{justify-content:center;text-align:center;gap:13px}.footer p{width:100%}.back-top{margin:0}.footer>small{margin-top:5px}}
+@media(max-width:420px){.hero h1{font-size:36px;letter-spacing:-1.7px}.hero-art{height:295px}.card-main{padding:18px}.art-number{font-size:36px}.floating-stat{padding:9px 10px}.floating-stat strong{font-size:9px}.floating-stat small{font-size:8px}.stat-one{left:-2px}.stat-two{right:-2px}.dashboard-frame{height:560px}.story-frame{height:540px}.viz-toolbar>span{max-width:110px;overflow:hidden;white-space:nowrap}.section-heading h2{letter-spacing:-1px}}
+
+
+/* Author styles */
+.hero-author-badge{display:inline-flex;align-items:center;gap:8px;background:#fbf3ed;border:1px solid #edd5c5;border-radius:999px;padding:6px 14px;font-size:12px;color:var(--brown);margin-bottom:14px}
+.hero-author-badge strong{color:var(--brown-dark)}
+.hero-author-badge .badge-dot{color:#729276;font-size:10px}
+.hero-author-badge .badge-divider{color:#d8c3b4}
+.author-pill{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;font-size:12px;font-weight:700;color:var(--brown);background:#fbf3ed;border:1px solid #e8ddd2}
+.author-banner{max-width:850px;margin:32px auto 0;padding:20px 24px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.author-avatar{width:46px;height:46px;border-radius:13px;background:var(--brown);color:#fff;font-weight:800;font-size:17px;display:grid;place-items:center;flex-shrink:0}
+.author-info{flex:1;min-width:200px}
+.author-info h3{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#a36d50;margin:0 0 3px;font-weight:700}
+.author-info p{margin:0;font-size:15px;color:var(--ink)}
+.author-info small{color:var(--muted);font-size:12px}
+.author-btn{padding:9px 18px;font-size:11px;border-radius:999px}
+.footer-author{font-size:11px;color:var(--brown);font-weight:600}
+
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Health360 home">
+      <span class="brand-mark">H<span>+</span></span>
+      <span class="brand-name">Health<span>360</span></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+    <nav class="nav" id="mainNav" aria-label="Main navigation">
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#dashboard" class="nav-link">Dashboard</a>
+      <a href="#story" class="nav-link">Story</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <span class="author-pill">By Aman Bagal</span>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-copy">
+        <div class="hero-author-badge">
+          <span class="badge-dot">●</span>
+          <span>Project by <strong>Aman Bagal</strong></span>
+          <span class="badge-divider">|</span>
+          <span>Medi-Caps University</span>
+        </div>
+        <br>
+        <span class="eyebrow"><span class="eyebrow-dot"></span> DATA-DRIVEN HEALTH INSIGHTS</span>
+        <h1>Understand health.<br><span>Make informed choices.</span></h1>
+        <p>Explore patient risk factors, lifestyle patterns, and healthcare insights through an interactive analytics experience.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#dashboard">Explore dashboard <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="#about">Discover Health360</a>
+        </div>
+        <div class="hero-note"><span class="note-icon">✦</span> Developed by <strong>Aman Bagal</strong> · Turning healthcare data into clearer insights</div>
+      </div>
+      <div class="hero-art" aria-label="Healthcare analytics illustration">
+        <div class="art-glow"></div>
+        <div class="art-card card-main">
+          <div class="art-card-top"><span>Health overview</span><span class="live-dot">● Live insights</span></div>
+          <div class="art-number">360° <small>perspective</small></div>
+          <div class="mini-bars"><i style="height:35%"></i><i style="height:53%"></i><i style="height:44%"></i><i style="height:72%"></i><i style="height:61%"></i><i style="height:88%"></i><i style="height:68%"></i><i style="height:95%"></i></div>
+          <div class="art-legend"><span><b class="legend-brown"></b>Risk factors</span><span><b class="legend-peach"></b>Lifestyle trends</span></div>
+        </div>
+        <div class="floating-stat stat-one"><span class="stat-symbol">♡</span><div><strong>Patient-first</strong><small>Insights at a glance</small></div></div>
+        <div class="floating-stat stat-two"><span class="stat-symbol stat-symbol-peach">↗</span><div><strong>Explore patterns</strong><small>Across age groups</small></div></div>
+        <div class="art-orbit"></div>
+      </div>
+    </section>
+
+    <section class="intro-strip">
+      <div><span class="strip-icon">⌁</span><p><strong>Explore the data</strong><small>Interactive visualisations</small></p></div>
+      <div><span class="strip-icon">◉</span><p><strong>Spot patterns</strong><small>Risk and lifestyle factors</small></p></div>
+      <div><span class="strip-icon">✧</span><p><strong>Build awareness</strong><small>Insights for better understanding</small></p></div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="section-heading">
+        <span class="eyebrow">ABOUT THE PROJECT</span>
+        <h2>Healthcare data, made <span>meaningful.</span></h2>
+        <p>Health360 brings key patient and lifestyle indicators together in one place, helping viewers explore how health patterns can vary across groups.</p>
+      </div>
+      <div class="feature-grid">
+        <article class="feature-card"><span class="feature-icon">⌕</span><h3>Explore risk factors</h3><p>Review indicators such as BMI category, diabetes, heart disease and stroke in the dashboard.</p></article>
+        <article class="feature-card"><span class="feature-icon">◷</span><h3>Compare age groups</h3><p>Explore differences across age groups and observe how lifestyle indicators are distributed.</p></article>
+        <article class="feature-card"><span class="feature-icon">▦</span><h3>Interact with visuals</h3><p>Use the Tableau filters, charts and story tabs to investigate the available data.</p></article>
+      </div>
+
+      <div class="author-banner">
+        <div class="author-avatar">AB</div>
+        <div class="author-info">
+          <h3>Project Developer</h3>
+          <p><strong>Aman Bagal</strong> — Medi-Caps University</p>
+          <small>Smart Healthcare Analytics: Patient Risk &amp; Lifestyle Insights</small>
+        </div>
+        <a href="https://github.com/amanbagal1001/Health360Flask" target="_blank" rel="noopener noreferrer" class="button button-secondary author-btn">
+          GitHub Repository ↗
+        </a>
+      </div>
+
+      <p class="disclaimer">Note: This project is for educational and informational purposes only. Visualisations should not be used as medical advice or for individual diagnosis.</p>
+    </section>
+
+    <section class="visual-section" id="dashboard">
+      <div class="section-heading">
+        <span class="eyebrow">EXPLORE THE VISUALISATION</span>
+        <h2>Your healthcare <span>dashboard.</span></h2>
+        <p>Interact with the original Tableau dashboard below. Use its filters and charts to explore the data.</p>
+      </div>
+      <div class="viz-shell">
+        <div class="viz-toolbar"><div><span class="toolbar-dot"></span><span class="toolbar-dot"></span><span class="toolbar-dot"></span></div><span>Health360 · Dashboard</span><a href="https://public.tableau.com/views/Health360ComprehensiveHealthcareRiskDiseaseAnalytics_17929898861220/Dashboard1?:showVizHome=no" target="_blank" rel="noopener noreferrer">Open in Tableau ↗</a></div>
+        <div class="viz-frame dashboard-frame">
+          <iframe title="Health360 Smart Healthcare Risk Factor Analysis Dashboard" src="https://public.tableau.com/views/Health360ComprehensiveHealthcareRiskDiseaseAnalytics_17929898861220/Dashboard1?:language=en-GB&:showVizHome=no&:embed=true" loading="lazy" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="visual-section story-section" id="story">
+      <div class="section-heading">
+        <span class="eyebrow">FOLLOW THE STORY</span>
+        <h2>See the story behind <span>the data.</span></h2>
+        <p>Move through the Tableau story to explore patient distribution, fatigue condition, exercise levels, blood pressure, and other health indicators.</p>
+      </div>
+      <div class="viz-shell">
+        <div class="viz-toolbar"><div><span class="toolbar-dot"></span><span class="toolbar-dot"></span><span class="toolbar-dot"></span></div><span>Health360 · Story</span><a href="https://public.tableau.com/views/Health360ComprehensiveHealthcareRiskDiseaseAnalytics_17929898861220/Story1?:showVizHome=no" target="_blank" rel="noopener noreferrer">Open in Tableau ↗</a></div>
+        <div class="viz-frame story-frame">
+          <iframe title="Health360 Smart Healthcare Analytics Story" src="https://public.tableau.com/views/Health360ComprehensiveHealthcareRiskDiseaseAnalytics_17929898861220/Story1?:language=en-GB&:showVizHome=no&:embed=true" loading="lazy" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq-section" id="faq">
+      <div class="section-heading">
+        <span class="eyebrow">QUICK ANSWERS</span>
+        <h2>Frequently asked <span>questions.</span></h2>
+        <p>A few details to help you navigate the Health360 experience.</p>
+      </div>
+      <div class="faq-list">
+        <details><summary>What is Health360?</summary><p>Health360 is a healthcare analytics project developed by Aman Bagal that presents patient risk and lifestyle insights through interactive Tableau visualisations.</p></details>
+        <details><summary>How do I use the dashboard?</summary><p>Use the interactive controls inside the embedded Tableau view. Depending on the chart, you may be able to select categories, hover for details, or apply filters.</p></details>
+        <details><summary>What is the Story page for?</summary><p>The Story view groups visualisations into a sequence so you can explore different aspects of the dataset step by step.</p></details>
+        <details><summary>Is this medical advice?</summary><p>No. The website is an educational data visualisation project and is not a substitute for advice from a qualified healthcare professional.</p></details>
+        <details><summary>Why is a Tableau visualisation not loading?</summary><p>Check your internet connection and make sure Tableau Public is accessible. You can also use the “Open in Tableau” link above each visualisation.</p></details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand footer-brand" href="#home"><span class="brand-mark">H<span>+</span></span><span class="brand-name">Health<span>360</span></span></a>
+    <p>Smart Healthcare Analytics: Patient Risk &amp; Lifestyle Insights</p>
+    <div class="footer-author">Developed by <strong>Aman Bagal</strong> · Medi-Caps University</div>
+    <a href="#home" class="back-top">Back to top ↑</a>
+    <small>© <span id="year"></span> Health360 · Developed by Aman Bagal · Educational project</small>
+  </footer>
+  <!-- External script links -->
+  <script src="../static/js/script.js" defer></script>
+  <script src="static/js/script.js" defer></script>
+  <script>
+    (() => {
+      if (window.__health360_initialized) return;
+      window.__health360_initialized = true;
+const menuToggle = document.getElementById('menuToggle');
+const mainNav = document.getElementById('mainNav');
+const navLinks = document.querySelectorAll('.nav-link');
+
+menuToggle.addEventListener('click', () => {
+  const isOpen = mainNav.classList.toggle('open');
+  menuToggle.setAttribute('aria-expanded', String(isOpen));
+  menuToggle.textContent = isOpen ? '×' : '☰';
+});
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    mainNav.classList.remove('open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.textContent = '☰';
+    navLinks.forEach(item => item.classList.remove('active'));
+    link.classList.add('active');
+  });
+});
+
+const sections = document.querySelectorAll('main section[id]');
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${entry.target.id}`);
+      });
+    }
+  });
+}, { rootMargin: '-25% 0px -60% 0px' });
+sections.forEach(section => observer.observe(section));
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+    })();
+  </script>
+</body>
+</html>

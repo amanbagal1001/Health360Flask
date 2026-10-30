@@ -1,1 +1,0 @@
-const btn=document.getElementById("menu"),nav=document.getElementById("nav");if(btn&&nav){btn.addEventListener("click",()=>nav.classList.toggle("open"));}

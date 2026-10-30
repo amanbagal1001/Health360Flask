@@ -1,5 +1,0 @@
-{% extends "base.html" %}{% block title %}{{ title }} | Health360{% endblock %}{% block content %}
-<section class="page-title"><label>HEALTH360 ANALYTICS</label><h1>{{ title }}</h1><div class="squiggle"></div><p>{{ subtitle }}</p></section>
-<section class="viz {{ view_type }}"><div class="viz-head"><div><small>INTERACTIVE VISUALIZATION</small><h2>Smart Healthcare Analytics: Patient Risk & Lifestyle Insights</h2></div><span>● Tableau Public</span></div>
-<div class="frame"><iframe src="{{ view_url }}" title="Health360 {{ title }} visualization" loading="lazy" allowfullscreen></iframe></div>
-<div class="viz-foot"><span>↗ Explore charts and filters inside the visualization</span><a href="{{ view_url }}" target="_blank" rel="noopener">Open in Tableau Public ↗</a></div></section>{% endblock %}
